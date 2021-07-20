@@ -57,6 +57,8 @@ export class ManualAuthenticationStrategy implements AuthenticationStrategy {
         if (this.keysMap.has(keyId)) {
             return this.keysMap.get(keyId);
         } else {
+            //Ignorar SSL
+            //process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
             const keys = await this.httpService.get<KeycloakCertsResponse>(`${this.baseURL}/realms/${this.realm}/protocol/openid-connect/certs`)
                 .pipe(map((response) => response.data.keys))
                 .toPromise();
