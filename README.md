@@ -26,6 +26,8 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+Article based project: https://itnext.io/protecting-your-nestjs-api-with-keycloak-8236e0998233 
+
 ## Installation
 
 ```bash
